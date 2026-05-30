@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Cairo", system-ui, -apple-system, sans-serif;
+  --font-serif: "Georgia", "Cairo", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-brand-blue: #050B14;
+  --color-brand-navy: #08101C;
+  --color-brand-gold: #C29E5E;
+  --color-brand-gold-light: #D8BA84;
+  --color-brand-steel: #101F35;
+  --color-brand-cyan: #00CED1;
+}
+
+/* Base modifications */
+html, body {
+  font-family: var(--font-sans);
+  background-color: #050B14;
+  color: #E2E8F0;
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050B14;
+}
+::-webkit-scrollbar-thumb {
+  background: #C29E5E;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D8BA84;
+}
+
+/* Simple animation styles */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* blueprint lines overlay */
+.blueprint-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 206, 209, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 206, 209, 0.04) 1px, transparent 1px);
+}
+
+.blueprint-grid-gold {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(194, 158, 94, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(194, 158, 94, 0.03) 1px, transparent 1px);
+}
